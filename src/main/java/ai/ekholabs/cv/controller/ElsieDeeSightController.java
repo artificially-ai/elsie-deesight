@@ -30,7 +30,7 @@ public class ElsieDeeSightController {
     final HttpHeaders headers = new HttpHeaders();
     headers.setCacheControl(CacheControl.noCache().getHeaderValue());
 
-    final byte[] resultImage = elsieDeeSightClient.process(face.getBytes());
+    final byte[] resultImage = elsieDeeSightClient.process(face);
     return new ResponseEntity<>(resultImage, headers, HttpStatus.OK);
   }
 }
