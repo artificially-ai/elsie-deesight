@@ -13,4 +13,4 @@ ENV ELSIE_DEESIGHT_PORT=8085
 EXPOSE $ELSIE_DEESIGHT_PORT
 
 ENTRYPOINT ["java"]
-CMD ["-server", "-Xmx1G", "-jar", "build/libs/elsie-deesight-1.0-SNAPSHOT.jar"]
+CMD ["-server", "-Xmx256M", "-jar", "build/libs/elsie-deesight-1.0-SNAPSHOT.jar"]
