@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 
-@FeignClient(serviceId = "elsie-deesight")
+@FeignClient(serviceId = "face-classifier")
 public interface ElsieDeeSightFeignClient {
 
-  @PostMapping(path = "elsie-deesight/process", consumes = APPLICATION_OCTET_STREAM_VALUE, produces = APPLICATION_OCTET_STREAM_VALUE)
+  @PostMapping(path = "face-classifier/process", consumes = APPLICATION_OCTET_STREAM_VALUE, produces = APPLICATION_OCTET_STREAM_VALUE)
   byte[] process(final byte[] imageBytes);
 }
