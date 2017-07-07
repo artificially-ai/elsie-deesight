@@ -26,7 +26,7 @@ In a dependency order priority, the Eureka Service should be started before ever
 
 * ```docker run -d -p 8085:8085 --link configuration-service --link eureka-service --link face-classifier ekholabs/elsie-deesight```
 
-Elsie-Dee will run on the background. To check details about the container, execute the following:
+Elsie-Dee Sight will run on the background. To check details about the container, execute the following:
 
 * ```docker ps```
 
@@ -48,10 +48,10 @@ In order to process image files, one can use the ```/process``` endpoint with Po
 
 ## Postman
 
-[Postman Screenshot](https://github.com/ekholabs/elsie-deesight/blob/master/src/test/resources/elsie-deesight-postman.png)
+![alt tag](src/test/resources/elsie-deesight-postman.png)
 
 ## cURL
 
-* ```curl -v -F input=@[path_to_file] http://localhost:8085/elsie-deesight/process > image.png```
+* ```curl -v -F image=@[path_to_file] http://localhost:8085/elsie-deesight/process > image.png```
 
 The ```image.png``` output file is the prediction made by the classifier.
