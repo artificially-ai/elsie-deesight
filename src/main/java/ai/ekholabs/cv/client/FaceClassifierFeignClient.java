@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 
 @FeignClient(serviceId = "face-classifier", configuration = MultipartSupportConfig.class)
-public interface ElsieDeeSightFeignClient {
+public interface FaceClassifierFeignClient {
 
   @RequestMapping(
       value = "/process",
@@ -27,7 +27,7 @@ public interface ElsieDeeSightFeignClient {
       produces = APPLICATION_OCTET_STREAM_VALUE
   )
   @ResponseBody
-  ResponseEntity<byte[]> process(@RequestPart MultipartFile file);
+  ResponseEntity<byte[]> process(final @RequestPart MultipartFile image);
 }
 
 @Configuration

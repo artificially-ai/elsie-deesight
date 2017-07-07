@@ -2,7 +2,7 @@ package ai.ekholabs.cv.controller;
 
 import java.io.IOException;
 
-import ai.ekholabs.cv.client.ElsieDeeSightFeignClient;
+import ai.ekholabs.cv.client.FaceClassifierFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,15 +15,15 @@ import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 @RestController
 public class ElsieDeeSightController {
 
-  private final ElsieDeeSightFeignClient elsieDeeSightClient;
+  private final FaceClassifierFeignClient elsieDeeSightClient;
 
   @Autowired
-  public ElsieDeeSightController(final ElsieDeeSightFeignClient elsieDeeSightClient) {
+  public ElsieDeeSightController(final FaceClassifierFeignClient elsieDeeSightClient) {
     this.elsieDeeSightClient = elsieDeeSightClient;
   }
 
   @PostMapping(consumes = MULTIPART_FORM_DATA_VALUE)
-  public ResponseEntity<byte[]> process(final @RequestParam(value = "face") MultipartFile face) throws IOException {
-    return elsieDeeSightClient.process(face);
+  public ResponseEntity<byte[]> process(final @RequestParam(value = "image") MultipartFile image) throws IOException {
+    return elsieDeeSightClient.process(image);
   }
 }
