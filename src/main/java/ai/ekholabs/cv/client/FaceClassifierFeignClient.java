@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -23,7 +24,7 @@ public interface FaceClassifierFeignClient {
       produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
   )
   @ResponseBody
-  byte[] process(@RequestPart MultipartFile file);
+  ResponseEntity<byte[]> process(@RequestPart MultipartFile file);
 }
 
 @Configuration
