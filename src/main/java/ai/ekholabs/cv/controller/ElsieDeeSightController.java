@@ -15,15 +15,15 @@ import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 @RestController
 public class ElsieDeeSightController {
 
-  private final FaceClassifierFeignClient elsieDeeSightClient;
+  private final FaceClassifierFeignClient faceClassifierFeignClient;
 
   @Autowired
-  public ElsieDeeSightController(final FaceClassifierFeignClient elsieDeeSightClient) {
-    this.elsieDeeSightClient = elsieDeeSightClient;
+  public ElsieDeeSightController(final FaceClassifierFeignClient faceClassifierFeignClient) {
+    this.faceClassifierFeignClient = faceClassifierFeignClient;
   }
 
   @PostMapping(consumes = MULTIPART_FORM_DATA_VALUE)
   public ResponseEntity<byte[]> process(final @RequestParam(value = "image") MultipartFile image) throws IOException {
-    return elsieDeeSightClient.process(image);
+    return faceClassifierFeignClient.process(image);
   }
 }
