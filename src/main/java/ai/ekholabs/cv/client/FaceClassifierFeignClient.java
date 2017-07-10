@@ -24,7 +24,7 @@ public interface FaceClassifierFeignClient {
       produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
   )
   @ResponseBody
-  ResponseEntity<byte[]> process(@RequestPart MultipartFile file);
+  ResponseEntity<byte[]> process(@RequestPart MultipartFile image);
 }
 
 @Configuration
