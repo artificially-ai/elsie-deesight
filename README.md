@@ -44,14 +44,14 @@ Once the application is running, the user/developer can find health status and m
 
 # Processing Image Files
 
-In order to process image files, one can use the ```/process``` endpoint with Postman or cURL.
+In order to process image files, one can use the ```/processImage``` endpoint with Postman or cURL.
 
 ## Postman
 
-![alt tag](src/test/resources/elsie-deesight-postman.png)
+![alt tag](src/test/resources/elsie-dee-sight-predicted-image-postman.png)
 
 ## cURL
 
-* ```curl -v -F image=@[path_to_file] http://localhost:8085/elsie-deesight/process > image.png```
+* ```curl -v -F image=@[path_to_file] http://localhost:8085/elsie-deesight/processImage > image.png```
 
 The ```image.png``` output file is the prediction made by the classifier.
