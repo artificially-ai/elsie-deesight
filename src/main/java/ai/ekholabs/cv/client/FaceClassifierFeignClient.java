@@ -19,12 +19,12 @@ import org.springframework.web.multipart.MultipartFile;
 public interface FaceClassifierFeignClient {
 
   @RequestMapping(
-      value = "/process",
+      value = "/classifyImage",
       method = RequestMethod.POST,
       produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
   )
   @ResponseBody
-  ResponseEntity<byte[]> process(@RequestPart MultipartFile image);
+  ResponseEntity<byte[]> classifyImage(@RequestPart MultipartFile image);
 }
 
 @Configuration
