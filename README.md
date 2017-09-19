@@ -52,6 +52,6 @@ In order to process image files, one can use the ```/processImage``` endpoint wi
 
 ## cURL
 
-* ```curl -v -F image=@[path_to_file] http://localhost:8085/elsie-deesight/processImage > image.png```
+* ```curl -v -F image=@[path_to_file] http://localhost:8085/elsie-deesight/classifyImage > image.png```
 
 The ```image.png``` output file is the prediction made by the classifier.
